@@ -16,21 +16,58 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
 }
 
-function validateInput(testInput) {
-    let form = document.querySelector('[data-testid="testForm"]');
-    form.addEventListener("submit", function(event) {
+const form = document.querySelector('[data-testid="testForm"]');
+    const pilotNameInput = form.querySelector('[name="pilotName"]');
+    const copilotNameInput = form.querySelector('[name="copilotName"]');
+    const fuelLevelInput = form.querySelector('[name="fuelLevel"]');
+    const cargoMassInput = form.querySelector('[name="cargoMass"]');
+    const submitButton = form.querySelector('#formSubmit');
+
+    submitButton.addEventListener('click', function(event) {
         event.preventDefault();
-        let pilotnameInput = document.querySelector("[name='pilotName']");
-        let copilotnameInput = document.querySelector("[name='copilotName']");
-        let fuellevelInput = document.querySelector("[name='fuelLevel']");
-        let cargomassInput = document.querySelector("[name='cargoMass']");
-        if (pilotusernameInput.value == "" || copilotnameInput.value == "" || fuellevelInput.value == "" || cargomassInput.value == "") {
-        alert("All fields are required.");
-        console.log(alert);
-        return false;
+        const testInput = "some value";
+        validateForm(testInput);
+    });
+
+    function validateForm(testInput) {
+        const pilotName = pilotNameInput.value;
+        const copilotName = copilotNameInput.value;
+        const fuelLevel = fuelLevelInput.value;
+        const cargoMass = cargoMassInput.value;
+
+        if (pilotName === "" || copilotName === "" || fuelLevel === "" || cargoMass === "") {
+            alert("All fields are required!");
+            return;
         }
-       })
-}
+        
+        if (isNaN(fuelLevel) || isNaN(cargoMass)) {
+            alert("Fuel Level and Cargo Mass must be numbers!");
+            return;
+        }
+
+        if (testInput === "some value") {
+            alert("Test input is valid!");
+            return;
+        }
+        
+        alert("Validation successful. Ready to launch!");
+    }
+
+// function validateInput(testInput) {
+//     let form = document.querySelector('[data-testid="testForm"]');
+//     form.addEventListener("submit", function(event) {
+//         event.preventDefault();
+//         let pilotnameInput = document.querySelector("[name='pilotName']");
+//         let copilotnameInput = document.querySelector("[name='copilotName']");
+//         let fuellevelInput = document.querySelector("[name='fuelLevel']");
+//         let cargomassInput = document.querySelector("[name='cargoMass']");
+//         if (pilotusernameInput.value == "" || copilotnameInput.value == "" || fuellevelInput.value == "" || cargomassInput.value == "") {
+//         alert("All fields are required.");
+//         console.log(alert);
+//         return false;
+//         }
+//        })
+// }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    
