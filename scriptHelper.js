@@ -21,7 +21,7 @@ const form = document.querySelector('[data-testid="testForm"]');
     const copilotNameInput = form.querySelector('[name="copilotName"]');
     const fuelLevelInput = form.querySelector('[name="fuelLevel"]');
     const cargoMassInput = form.querySelector('[name="cargoMass"]');
-    const submitButton = form.querySelector('#formSubmit');
+    const submitButton = form.querySelector('formSubmit');
 
     submitButton.addEventListener('click', function(event) {
         event.preventDefault();
@@ -30,17 +30,12 @@ const form = document.querySelector('[data-testid="testForm"]');
     });
 
     function validateInput(testInput) {
-        const pilotName = pilotNameInput.value;
-        const copilotName = copilotNameInput.value;
-        const fuelLevel = fuelLevelInput.value;
-        const cargoMass = cargoMassInput.value;
-
-        if (pilotName === "" || copilotName === "" || fuelLevel === "" || cargoMass === "") {
+        if (testInput === "") {
             alert("All fields are required!");
             return;
         }
         
-        if (isNaN(fuelLevel) || isNaN(cargoMass)) {
+        if (isNaN(testInput)) {
             alert("Fuel Level and Cargo Mass must be numbers!");
             return;
         }
@@ -53,18 +48,11 @@ const form = document.querySelector('[data-testid="testForm"]');
         alert("Validation successful. Ready to launch!");
     }
 
-// function validateInput(testInput) {
-//     let form = document.querySelector('[data-testid="testForm"]');
-//         if (pilotusernameInput.value == "" || copilotnameInput.value == "" || fuellevelInput.value == "" || cargomassInput.value == "") {
-//         alert("All fields are required.");
-//         console.log(alert);
-//         return false;
-//         }
-//        })
-// }
-
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-console.log(pilot)   
+validateInput(pilot, copilot, fuelLevel, cargoLevel)   
+// validateInput(copilot) 
+// validateInput(fuelLevel) 
+// validateInput(cargoLevel) 
 }
 
 async function myFetch() {
