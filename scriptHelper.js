@@ -16,19 +16,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
 }
 
-// const form = document.querySelector('[data-testid="testForm"]');
-//     const pilotNameInput = form.querySelector('[name="pilotName"]');
-//     const copilotNameInput = form.querySelector('[name="copilotName"]');
-//     const fuelLevelInput = form.querySelector('[name="fuelLevel"]');
-//     const cargoMassInput = form.querySelector('[name="cargoMass"]');
-//     const submitButton = form.querySelector('formSubmit');
-
-    // submitButton.addEventListener('click', function(event) {
-    //     event.preventDefault();
-    //     const testInput = "some value";
-    //     validateForm(testInput);
-    // });
-
     function validateInput(testInput) {
         if (testInput === Number) {
             return "Is a number.";
@@ -42,11 +29,12 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
         alert("All fields are required.")
-    } else if ((isNaN(fuelLevel) === true) || (isNaN(cargoMass) === true)) {
-        "Fuel level and/or cargo mass must be a number."
+    } else if (isNaN(pilot) === false || isNaN(copilot) === false) {
+      alert("Please enter a valid name for the pilot's name and/or the copilot's name.");
+    } else if ((isNaN(fuelLevel) === true) || (isNaN(cargoLevel) === true)) {
+        alert("Fuel level and/or cargo mass must be a number.")
     }
     validateInput(pilot)
-    validateInput(fuelLevel)
 }
 
 async function myFetch() {
