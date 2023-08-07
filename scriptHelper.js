@@ -39,7 +39,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     } else {
         document.getElementById("pilotStatus").innerHTML = "Pilot " + pilot + " is ready for launch";
         document.getElementById("copilotStatus").innerHTML = "Co-pilot " + copilot + " is ready for launch";
-        if (fuelLevel <= 10000) {
+        if (fuelLevel < 10000) {
            document.getElementById("faultyItems").style.visibility = "visible";
            document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
            document.getElementById("launchStatus").style.color = "rgb(199, 37, 78)";
