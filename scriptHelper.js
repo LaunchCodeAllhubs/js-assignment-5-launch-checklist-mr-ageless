@@ -31,11 +31,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
-        alert("All fields are required.")
+        alert("All fields are required.");
     } else if (isNaN(pilot) === false || isNaN(copilot) === false) {
-      alert("Please enter a valid name for the pilot's name and/or the copilot's name.");
+        alert("Please enter a valid name for the pilot's name and/or the copilot's name.");
     } else if ((isNaN(fuelLevel) === true) || (isNaN(cargoLevel) === true)) {
-        alert("Fuel level and/or cargo mass must be a number.")
+        alert("Fuel level and/or cargo mass must be a number.");
     } else {
         document.getElementById("pilotStatus").innerHTML = "Pilot " + pilot + " is ready for launch";
         document.getElementById("copilotStatus").innerHTML = "Co-pilot " + copilot + " is ready for launch";
