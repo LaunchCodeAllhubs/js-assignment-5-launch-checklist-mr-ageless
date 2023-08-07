@@ -62,7 +62,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
            document.getElementById("faultyItems").style.visibility = "visible";
         }
      }
-    validateInput()
+     validateInput(pilot);
+     validateInput(copilot);
+     validateInput(fuelLevel);
+     validateInput(cargoLevel);
+     
 }
 
 async function myFetch() {
