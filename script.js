@@ -5,6 +5,7 @@ const { pickPlanet, addDestinationInfo } = require("./scriptHelper");
 window.addEventListener("load", function() {
     let form = document.querySelector('[data-testid="testForm"]');
     let list = document.getElementById("faultyItems")
+    list.style.visibility = "hidden"
     form.addEventListener("submit", function(event) {
         event.preventDefault();
         let pilotnameInput = document.querySelector("[name='pilotName']");
