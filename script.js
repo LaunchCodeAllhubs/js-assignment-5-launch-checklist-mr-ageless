@@ -1,7 +1,5 @@
 // Write your JavaScript code here!
 
-const { pickPlanet, addDestinationInfo } = require("./scriptHelper");
-
 window.addEventListener("load", function() {
     let form = document.querySelector('[data-testid="testForm"]');
     let list = document.getElementById("faultyItems")
